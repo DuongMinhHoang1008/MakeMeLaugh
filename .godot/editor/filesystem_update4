@@ -1,3 +1,6 @@
 res://main_game.tscn
 res://monster.tscn
 res://player.tscn
+res://monster.gd
+res://player.gd
+res://attack.gd
