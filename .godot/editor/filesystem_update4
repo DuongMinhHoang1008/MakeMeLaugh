@@ -10,3 +10,7 @@ res://attack.gd
 res://player.tscn
 res://block.tscn
 res://player.gd
+res://red_devil.tscn
+res://red_devil.gd
+res://fire.tscn
+res://fire.gd

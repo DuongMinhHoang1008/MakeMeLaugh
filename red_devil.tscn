@@ -1,0 +1,135 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0mfs4d0gr8il"]
+
+[ext_resource type="PackedScene" uid="uid://bbqpi3sm116fw" path="res://attack.tscn" id="1_ge5pl"]
+[ext_resource type="Script" path="res://red_devil.gd" id="1_niljm"]
+[ext_resource type="Texture2D" uid="uid://brrjf6yb2fq1v" path="res://419999730_1126163015382448_8705113409876691874_n.png" id="3_euaqj"]
+[ext_resource type="PackedScene" uid="uid://chvovdue55bs2" path="res://block.tscn" id="3_w5863"]
+[ext_resource type="PackedScene" uid="uid://dww1it18vot51" path="res://tickle_point.tscn" id="4_d3n32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is5sp"]
+
+[sub_resource type="Animation" id="Animation_w3r5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wpfan"]
+resource_name = "attack_left"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_dvi3n"]
+resource_name = "attack_right"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_pp0uo"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lfm6y"]
+resource_name = "laugh"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_grhli"]
+_data = {
+"RESET": SubResource("Animation_w3r5v"),
+"attack_left": SubResource("Animation_wpfan"),
+"attack_right": SubResource("Animation_dvi3n"),
+"idle": SubResource("Animation_pp0uo"),
+"laugh": SubResource("Animation_lfm6y")
+}
+
+[node name="RedDevil" type="CharacterBody2D"]
+script = ExtResource("1_niljm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_is5sp")
+
+[node name="Attack" parent="." instance=ExtResource("1_ge5pl")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_grhli")
+}
+
+[node name="Kong" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_euaqj")
+hframes = 5
+
+[node name="Block" parent="." instance=ExtResource("3_w5863")]
+
+[node name="TicklePoint" parent="." instance=ExtResource("4_d3n32")]
+offset_left = -97.0
+offset_top = -7.0
+offset_right = -75.0
+offset_bottom = 13.0
+
+[node name="TicklePoint2" parent="." instance=ExtResource("4_d3n32")]
+offset_left = 57.0
+offset_top = -6.0
+offset_right = 76.0
+offset_bottom = 15.0
+
+[connection signal="attackEnemy" from="Attack" to="." method="_on_attack_attack_enemy"]
