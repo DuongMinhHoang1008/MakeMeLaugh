@@ -1,15 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2xrdpyjq1wsf"]
+[gd_scene load_steps=6 format=3 uid="uid://b2xrdpyjq1wsf"]
 
 [ext_resource type="Texture2D" uid="uid://8ayyxp4726f2" path="res://icon.svg" id="1_r8nfs"]
 [ext_resource type="Script" path="res://player.gd" id="1_x36yb"]
 [ext_resource type="PackedScene" uid="uid://bbqpi3sm116fw" path="res://attack.tscn" id="3_570ke"]
 [ext_resource type="PackedScene" uid="uid://c4payrsk6yogy" path="res://block.tscn" id="4_j577g"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8hwd"]
+size = Vector2(250, 136)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_x36yb")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_g8hwd")
+
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(584, 512)
+position = Vector2(-1, 2)
+rotation = 1.5708
 scale = Vector2(1.0625, 1.94531)
 texture = ExtResource("1_r8nfs")
 

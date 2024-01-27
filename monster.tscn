@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bc07dvrya8ys"]
+[gd_scene load_steps=13 format=3 uid="uid://bc07dvrya8ys"]
 
 [ext_resource type="Script" path="res://monster.gd" id="1_txfpa"]
 [ext_resource type="PackedScene" uid="uid://bbqpi3sm116fw" path="res://attack.tscn" id="2_5pgtu"]
 [ext_resource type="Texture2D" uid="uid://2nc2ux1pt1na" path="res://419910776_366674212758582_670175802121145348_n.png" id="3_3hmau"]
 [ext_resource type="PackedScene" uid="uid://c4payrsk6yogy" path="res://block.tscn" id="4_0qva7"]
 [ext_resource type="PackedScene" uid="uid://dww1it18vot51" path="res://tickle_point.tscn" id="5_sbbbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4us5"]
 
 [sub_resource type="Animation" id="Animation_w3r5v"]
 length = 0.001
@@ -98,9 +100,12 @@ _data = {
 "laugh": SubResource("Animation_lfm6y")
 }
 
-[node name="Monster" type="Node2D" node_paths=PackedStringArray("tickle")]
+[node name="Monster" type="CharacterBody2D" node_paths=PackedStringArray("tickle")]
 script = ExtResource("1_txfpa")
 tickle = [NodePath("TicklePoint"), NodePath("TicklePoint2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a4us5")
 
 [node name="Attack" parent="." instance=ExtResource("2_5pgtu")]
 

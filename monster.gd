@@ -1,5 +1,5 @@
 class_name Monster
-extends Node2D
+extends CharacterBody2D
 
 @export var tickle: Array[TicklePoint]
 
