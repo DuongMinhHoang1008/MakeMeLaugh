@@ -8,3 +8,4 @@ res://player.tscn
 res://rock.tscn
 res://red_devil.tscn
 res://attack.gd
+res://main_game.gd
