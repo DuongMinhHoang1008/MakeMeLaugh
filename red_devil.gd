@@ -8,7 +8,7 @@ var direction: String
 var health = 100
 var tickle_meter: int = 0
 
-const rock = preload("res://rock.tscn")
+const fire = preload("res://fire.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +16,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$Arrow.look_at(enemy.global_position)
+	
 	$Attack.do_attack(enemy)
 	
 	if $Attack.in_attack_time:
@@ -53,9 +55,14 @@ func is_in_attack_time() -> bool:
 
 func _on_attack_attack_enemy():
 	direction = rand_attack()
-	var r = rock.instantiate()
-	var direction: Vector2 = enemy.global_position - global_position
-	r.global_position = global_position
-	r.linear_velocity = direction * (400 / sqrt(direction.x * direction.x + direction.y * direction.y))
-	get_parent().add_child(r)
+	
+	for i in range(5):
+		var r = fire.instantiate()
+		var direction: Vector2 = enemy.global_position - global_position
+		r.global_rotation = $Arrow.global_rotation
+		r.global_position = global_position
+		r.global_rotation_degrees += 45 * i - 90
+		r.linear_velocity.x = cos(r.global_rotation) * 400
+		r.linear_velocity.y = sin(r.global_rotation) * 400
+		get_parent().add_child(r)
 	

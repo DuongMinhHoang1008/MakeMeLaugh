@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0mfs4d0gr8il"]
+[gd_scene load_steps=14 format=3 uid="uid://b0mfs4d0gr8il"]
 
 [ext_resource type="PackedScene" uid="uid://bbqpi3sm116fw" path="res://attack.tscn" id="1_ge5pl"]
 [ext_resource type="Script" path="res://red_devil.gd" id="1_niljm"]
 [ext_resource type="Texture2D" uid="uid://brrjf6yb2fq1v" path="res://419999730_1126163015382448_8705113409876691874_n.png" id="3_euaqj"]
 [ext_resource type="PackedScene" uid="uid://chvovdue55bs2" path="res://block.tscn" id="3_w5863"]
 [ext_resource type="PackedScene" uid="uid://dww1it18vot51" path="res://tickle_point.tscn" id="4_d3n32"]
+[ext_resource type="Texture2D" uid="uid://8ayyxp4726f2" path="res://icon.svg" id="6_qid57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is5sp"]
 
@@ -100,8 +101,9 @@ _data = {
 "laugh": SubResource("Animation_lfm6y")
 }
 
-[node name="RedDevil" type="CharacterBody2D"]
+[node name="RedDevil" type="CharacterBody2D" node_paths=PackedStringArray("tickle")]
 script = ExtResource("1_niljm")
+tickle = [NodePath("TicklePoint"), NodePath("TicklePoint2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_is5sp")
@@ -131,5 +133,11 @@ offset_left = 57.0
 offset_top = -6.0
 offset_right = 76.0
 offset_bottom = 15.0
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(1, 0.15625)
+texture = ExtResource("6_qid57")
 
 [connection signal="attackEnemy" from="Attack" to="." method="_on_attack_attack_enemy"]
