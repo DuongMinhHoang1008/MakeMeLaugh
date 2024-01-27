@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2xrdpyjq1wsf" path="res://player.tscn" id="1_araeg"]
 [ext_resource type="Script" path="res://main_game.gd" id="1_nrshj"]
-[ext_resource type="PackedScene" uid="uid://bprisrqeam5af" path="res://rock_monster.tscn" id="3_f0d57"]
+[ext_resource type="PackedScene" uid="uid://b0mfs4d0gr8il" path="res://red_devil.tscn" id="3_hs3vp"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_nrshj")
@@ -10,5 +10,5 @@ script = ExtResource("1_nrshj")
 [node name="Player" parent="." instance=ExtResource("1_araeg")]
 position = Vector2(587, 564)
 
-[node name="RockMonster" parent="." instance=ExtResource("3_f0d57")]
-position = Vector2(601, 165)
+[node name="RedDevil" parent="." instance=ExtResource("3_hs3vp")]
+position = Vector2(579, 147)
