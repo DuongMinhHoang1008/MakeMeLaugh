@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2xrdpyjq1wsf"]
+
+[ext_resource type="Texture2D" uid="uid://8ayyxp4726f2" path="res://icon.svg" id="1_r8nfs"]
+[ext_resource type="Script" path="res://player.gd" id="1_x36yb"]
+[ext_resource type="PackedScene" uid="uid://bbqpi3sm116fw" path="res://attack.tscn" id="3_570ke"]
+[ext_resource type="PackedScene" uid="uid://c4payrsk6yogy" path="res://block.tscn" id="4_j577g"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_x36yb")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(584, 512)
+scale = Vector2(1.0625, 1.94531)
+texture = ExtResource("1_r8nfs")
+
+[node name="Attack" parent="." instance=ExtResource("3_570ke")]
+
+[node name="Block" parent="." instance=ExtResource("4_j577g")]

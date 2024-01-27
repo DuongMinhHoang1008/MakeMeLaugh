@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dww1it18vot51"]
+
+[ext_resource type="Script" path="res://tickle_point.gd" id="1_si1oa"]
+
+[node name="TicklePoint" type="Button"]
+offset_left = -47.0
+offset_top = -49.0
+offset_right = -1.0
+offset_bottom = 3.0
+scale = Vector2(2, 2)
+script = ExtResource("1_si1oa")
