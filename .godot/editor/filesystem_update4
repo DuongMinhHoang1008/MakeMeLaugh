@@ -1,6 +1,10 @@
+res://fire.tscn
+res://fire.gd
+res://attack.tscn
+res://red_devil.gd
 res://main_game.tscn
-res://monster.tscn
+res://tickle_point.tscn
 res://player.tscn
-res://monster.gd
-res://player.gd
+res://rock.tscn
+res://red_devil.tscn
 res://attack.gd
