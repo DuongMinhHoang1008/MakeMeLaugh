@@ -1,0 +1,20 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706340565
+419910776_366674212758582_670175802121145348_n.png::CompressedTexture2D::1922106426650264362::1706334062::1706334101::1::::<><>::
+attack.gd::GDScript::-1::1706334062::0::1::::<>Node2D<>::
+attack.tscn::PackedScene::2490566111680137260::1706334062::0::1::::<><>::res://attack.gd
+block.gd::GDScript::-1::1706334062::0::1::::<>Node2D<>::
+block.tscn::PackedScene::6839327279453927692::1706334062::0::1::::<><>::res://block.gd
+CharacterBody2D.gd::GDScript::-1::1706334062::0::1::::<>CharacterBody2D<>::
+grabber.png::CompressedTexture2D::8756072339697128024::1706339476::1706339476::1::::<><>::
+icon.svg::CompressedTexture2D::2317733139505788153::1706334062::1706334101::1::::<><>::
+main_game.gd::GDScript::-1::1706334062::0::1::::<>Node2D<>::
+main_game.tscn::PackedScene::270741489146078106::1706339478::0::1::::<><>::uid://b2xrdpyjq1wsf::::res://player.tscn<>res://main_game.gd<>uid://bc07dvrya8ys::::res://monster.tscn<>uid://ciyxwrp18bpro::::res://slider.png<>uid://dw0rh5mxjbnmu::::res://grabber.png
+monster.gd::GDScript::-1::1706334062::0::1::::Monster<>Node2D<>::
+monster.tscn::PackedScene::75892860185726630::1706334062::0::1::::<><>::res://monster.gd<>uid://bbqpi3sm116fw::::res://attack.tscn<>uid://2nc2ux1pt1na::::res://419910776_366674212758582_670175802121145348_n.png<>uid://c4payrsk6yogy::::res://block.tscn<>uid://dww1it18vot51::::res://tickle_point.tscn
+player.gd::GDScript::-1::1706334062::0::1::::<>Node2D<>::
+player.tscn::PackedScene::4330038521879001137::1706334062::0::1::::<><>::uid://8ayyxp4726f2::::res://icon.svg<>res://player.gd<>uid://bbqpi3sm116fw::::res://attack.tscn<>uid://c4payrsk6yogy::::res://block.tscn
+slider.png::CompressedTexture2D::5385333878181928228::1706339244::1706339244::1::::<><>::
+tickle_point.gd::GDScript::-1::1706334062::0::1::::TicklePoint<>Button<>::
+tickle_point.tscn::PackedScene::8750426889505070786::1706334062::0::1::::<><>::res://tickle_point.gd
+y2mate.com - Driftveil City Pokémon Black  White.mp3::AudioStreamMP3::4157297959553365720::1706340565::1706340567::1::::<><>::

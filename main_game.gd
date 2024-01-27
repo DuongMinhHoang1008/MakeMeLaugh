@@ -5,6 +5,7 @@ extends Node2D
 func _ready():
 	$Monster.set_enemy($Player)
 	$Player.set_enemy($Monster)
+	$AudioStreamPlayer2D.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

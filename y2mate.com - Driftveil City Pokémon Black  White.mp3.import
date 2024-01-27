@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0h3dcbs6212s"
+path="res://.godot/imported/y2mate.com - Driftveil City Pokémon Black  White.mp3-a070f26f62305b338975e0db429a822c.mp3str"
+
+[deps]
+
+source_file="res://y2mate.com - Driftveil City Pokémon Black  White.mp3"
+dest_files=["res://.godot/imported/y2mate.com - Driftveil City Pokémon Black  White.mp3-a070f26f62305b338975e0db429a822c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
