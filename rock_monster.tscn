@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bbqpi3sm116fw" path="res://attack.tscn" id="1_anm1j"]
 [ext_resource type="Script" path="res://rock_monster.gd" id="1_uvevy"]
 [ext_resource type="Texture2D" uid="uid://dr8lq1ybrhygl" path="res://417241531_918965542693028_8760369013922564419_n.png" id="2_m8fvs"]
-[ext_resource type="PackedScene" uid="uid://c4payrsk6yogy" path="res://block.tscn" id="3_2x0yn"]
+[ext_resource type="PackedScene" uid="uid://chvovdue55bs2" path="res://block.tscn" id="3_2x0yn"]
 [ext_resource type="PackedScene" uid="uid://dww1it18vot51" path="res://tickle_point.tscn" id="4_b3vbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is5sp"]

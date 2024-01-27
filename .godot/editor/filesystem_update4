@@ -8,3 +8,5 @@ res://rock.tscn
 res://attack.tscn
 res://attack.gd
 res://player.tscn
+res://block.tscn
+res://player.gd

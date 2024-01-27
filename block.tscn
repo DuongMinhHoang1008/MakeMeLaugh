@@ -1,6 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4payrsk6yogy"]
+[gd_scene load_steps=2 format=3 uid="uid://chvovdue55bs2"]
 
-[ext_resource type="Script" path="res://block.gd" id="1_67hsn"]
+[sub_resource type="GDScript" id="GDScript_kg2b6"]
+script/source = "extends Node2D
+
+var block_code = [0,0,0]
+const default = [0,0,0]
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func block(attack_code: Array, hit: int):
+	if get_parent().has_method(\"damage\"):
+		for i in range(3):
+			print(str(attack_code))
+			print(str(block_code))
+			if attack_code[i] > block_code[i]:
+				get_parent().call(\"damage\", hit)
+
+func set_block(bc: Array):
+	if bc.size() == 3:
+		block_code = bc
+
+func set_default():
+	block_code = default
+
+func set_full_block():
+	block_code = [1,1,1]
+"
 
 [node name="Block" type="Node2D"]
-script = ExtResource("1_67hsn")
+script = SubResource("GDScript_kg2b6")

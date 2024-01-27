@@ -6,8 +6,6 @@ extends CharacterBody2D
 var in_attack_time: bool = true
 var enemy
 var direction: String
-const moveset_attack = [[1,1,0], [0,1,1]]
-const moveset_block = [[1,1,0], [0,1,1]]
 var health = 100
 var tickle_meter: int = 0
 

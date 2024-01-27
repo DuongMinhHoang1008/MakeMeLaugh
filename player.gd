@@ -4,8 +4,6 @@ signal dodge
 var in_dodge_time: bool = false
 var enemy
 var pos: Vector2
-const moveset_attack = [[1,0,0], [0,0,1]]
-const moveset_block = [[0,1,1], [1,1,0]]
 const SPEED = 400
 
 # Called when the node enters the scene tree for the first time.
