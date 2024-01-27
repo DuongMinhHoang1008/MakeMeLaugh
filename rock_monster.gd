@@ -1,9 +1,8 @@
-class_name Monster
+class_name RockMonster
 extends CharacterBody2D
 
 @export var tickle: Array[TicklePoint]
 
-signal attack
 var in_attack_time: bool = true
 var enemy
 var direction: String
@@ -11,6 +10,8 @@ const moveset_attack = [[1,1,0], [0,1,1]]
 const moveset_block = [[1,1,0], [0,1,1]]
 var health = 100
 var tickle_meter: int = 0
+
+const rock = preload("res://rock.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +26,6 @@ func _process(delta):
 	elif $Attack.in_attack_cooldown:
 		$Block.set_full_block()
 		$AnimationPlayer.play("idle")
-		direction = rand_attack()
 
 func damage(hit: int):
 	health -= hit
@@ -40,8 +40,6 @@ func rand_attack() -> String:
 	var dir: String = "right"
 	if rand == 0:
 		dir = "left"
-	$Attack.set_attack(moveset_attack[rand])
-	$Block.set_block(moveset_block[rand])
 	for t in tickle:
 		t.hide()
 	tickle[rand].show()
@@ -54,3 +52,13 @@ func be_tickled():
 
 func is_in_attack_time() -> bool:
 	return $Attack.in_attack_time
+
+
+func _on_attack_attack_enemy():
+	direction = rand_attack()
+	var r = rock.instantiate()
+	var direction: Vector2 = enemy.global_position - global_position
+	r.global_position = global_position
+	r.linear_velocity = direction * (400 / sqrt(direction.x * direction.x + direction.y * direction.y))
+	get_parent().add_child(r)
+	
